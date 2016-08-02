@@ -1,10 +1,60 @@
-﻿Build started 08/07/2016 19:29:17.
-     1>Project "c:\Users\Dad_2\documents\visual studio 2013\Projects\Project1\Project1\Project1.vcxproj" on node 2 (Build target(s)).
+﻿Build started 02/08/2016 12:07:17.
+     1>Project "C:\Users\Dad_2\Documents\Visual Studio 2013\Projects\Project1\Project1\Project1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt cFont.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt asteroidsGame.cpp cAsteroid.cpp cBkGround.cpp cBullet.cpp cFont.cpp cFontMgr.cpp cInputMgr.cpp cRocket.cpp cSound.cpp cSoundMgr.cpp cSprite.cpp cTexture.cpp cWNDManager.cpp main.cpp
+         main.cpp
+         cWNDManager.cpp
+         cTexture.cpp
+         cSprite.cpp
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(106): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(107): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(180): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(182): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(184): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(206): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(241): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(242): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(243): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(244): warning C4244: '=' : conversion from 'float' to 'LONG', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(301): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(313): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(314): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\csprite.cpp(315): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         cSoundMgr.cpp
+         cSound.cpp
+         cRocket.cpp
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\crocket.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\crocket.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\crocket.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\crocket.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+         cInputMgr.cpp
+         cFontMgr.cpp
          cFont.cpp
+         cBullet.cpp
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(23): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(91): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(102): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(103): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(104): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\cbullet.cpp(105): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+         cBkGround.cpp
+         cAsteroid.cpp
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(25): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(27): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(29): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(31): warning C4244: 'argument' : conversion from 'int' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(84): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(95): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(96): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(97): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+     1>c:\users\dad_2\documents\visual studio 2013\projects\project1\project1\casteroid.cpp(98): warning C4244: 'argument' : conversion from 'LONG' to 'GLfloat', possible loss of data
+         asteroidsGame.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\dad_2\documents\visual studio 2013\Projects\Project1\Debug\Project1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"c:\users\dad_2\documents\visual studio 2013\Projects\Project1\Debug\Project1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\dad_2\documents\visual studio 2013\Projects\Project1\Debug\Project1.lib" /MACHINE:X86 Debug\asteroidsGame.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dad_2\Documents\Visual Studio 2013\Projects\Project1\Debug\Project1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Dad_2\Documents\Visual Studio 2013\Projects\Project1\Debug\Project1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dad_2\Documents\Visual Studio 2013\Projects\Project1\Debug\Project1.lib" /MACHINE:X86 Debug\asteroidsGame.obj
          Debug\cAsteroid.obj
          Debug\cBkGround.obj
          Debug\cBullet.obj
@@ -26,9 +76,9 @@
          ILU.lib
          ILUT.lib
          OpenAL32.lib
-         Project1.vcxproj -> c:\users\dad_2\documents\visual studio 2013\Projects\Project1\Debug\Project1.exe
-     1>Done Building Project "c:\Users\Dad_2\documents\visual studio 2013\Projects\Project1\Project1\Project1.vcxproj" (Build target(s)).
+         Project1.vcxproj -> C:\Users\Dad_2\Documents\Visual Studio 2013\Projects\Project1\Debug\Project1.exe
+     1>Done Building Project "C:\Users\Dad_2\Documents\Visual Studio 2013\Projects\Project1\Project1\Project1.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:07.44
+Time Elapsed 00:01:15.02
