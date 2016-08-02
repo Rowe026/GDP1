@@ -13,6 +13,7 @@
 #include "cFontMgr.h"
 #include "cSprite.h"
 #include "asteroidsGame.h"
+#include "cButton.h"
 
 int WINAPI WinMain(HINSTANCE hInstance,
                    HINSTANCE hPrevInstance,
@@ -87,7 +88,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	theSoundMgr->add("Shot", gameSounds[1]);
 	theSoundMgr->add("Explosion", gameSounds[2]);
 
-	// load game fontss
+	// load game fonts
 	// Load Fonts
 	LPCSTR gameFonts[2] = { "Fonts/digital-7.ttf", "Fonts/space age.ttf" };
 
@@ -95,7 +96,31 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	theFontMgr->addFont("Space", gameFonts[1], 24);
 
 	// Create vector array of textures
+	//List of background textures
+	vector<cTexture*> textureBkgList;
+	LPCSTR bkgTexturesToUse[] = { "Images/menuBkGrd.png", "Images/mainBkGrd.png" };
+	for (int tCount = 0; tCount < 2; tCount++)
+	{
+		textureBkgList.push_back(new cTexture());
+		textureBkgList[tCount]->createTexture(bkgTexturesToUse[tCount]);
+	}
 
+	cTexture transSprite;
+	transSprite.createTexture("Images/blank.png");
+
+	//Menu screens texture
+	cBkGround spriteMenuBkgd;
+	spriteMenuBkgd.setSpritePos(glm::vec2(0.0f, 0.0f));
+	spriteMenuBkgd.setTexture(textureBkgList[0]->getTexture());
+	spriteMenuBkgd.setTextureDimensions(textureBkgList[0]->getTWidth(), textureBkgList[0]->getTHeight());
+
+	//Main screen texture
+	cBkGround spriteBkgd;
+	spriteBkgd.setSpritePos(glm::vec2(0.0f, 0.0f));
+	spriteBkgd.setTexture(textureBkgList[1]->getTexture());
+	spriteBkgd.setTextureDimensions(textureBkgList[1]->getTWidth(), textureBkgList[1]->getTHeight());
+
+	//Setting up asteriod spawn conditions
 	for (int astro = 0; astro < 5; astro++)
 	{
 		theAsteroids.push_back(new cAsteroid);
@@ -111,13 +136,6 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	}
 
 
-	cTexture textureBkgd;
-	textureBkgd.createTexture("Images\\starscape1024x768.png");
-	cBkGround spriteBkgd;
-	spriteBkgd.setSpritePos(glm::vec2(0.0f, 0.0f));
-	spriteBkgd.setTexture(textureBkgd.getTexture());
-	spriteBkgd.setTextureDimensions(textureBkgd.getTWidth(), textureBkgd.getTHeight());
-
 	cTexture rocketTxt;
 	rocketTxt.createTexture("Images\\rocketSprite.png");
 	cRocket rocketSprite;
@@ -127,6 +145,40 @@ int WINAPI WinMain(HINSTANCE hInstance,
 	rocketSprite.setTextureDimensions(rocketTxt.getTWidth(), rocketTxt.getTHeight());
 	rocketSprite.setSpriteCentre();
 	rocketSprite.setRocketVelocity(glm::vec2(0.0f, 0.0f));
+
+
+
+
+
+	// Create vector array of button textures  ..............................................................................
+	vector<cTexture*> btnTextureList;
+	LPCSTR btnTexturesToUse[] = { "Images/Buttons/exitBtn.png", "Images/Buttons/playBtn.png"};
+	for (int tCount = 0; tCount < 2; tCount++)
+	{
+		btnTextureList.push_back(new cTexture());
+		btnTextureList[tCount]->createTexture(btnTexturesToUse[tCount]);
+	}
+
+	//Exit button
+	// exitButton;
+	//.attachInputMgr(theInputMgr);
+	//exitButton.setTexture(btnTextureList[0]->getTexture());
+	//exitButton.setTextureDimensions(btnTextureList[0]->getTWidth(), btnTextureList[0]->getTHeight());
+
+	//Play button
+	//cButton playButton;
+	//.attachInputMgr(theInputMgr);
+	//.setTexture(btnTextureList[1]->getTexture());
+	//.setTextureDimensions(btnTextureList[1]->getTWidth(), btnTextureList[1]->getTHeight());
+
+	//Strings for text display  .............................................................................................
+	string outputMsg;
+	string strMsg[] = { "UFO ATTACK", "Avoid the enemies while trying", "to distroy them and get points.", "Score:", "Congratulations!", "Your final score is: " };
+
+	//Starting game state ...................................................................................................
+	gameState theGameState = MENU;
+	btnTypes theBtnType = EXIT;
+
 
 	// Attach sound manager to rocket sprite
 	rocketSprite.attachSoundMgr(theSoundMgr);
@@ -140,31 +192,131 @@ int WINAPI WinMain(HINSTANCE hInstance,
 		float elapsedTime = pgmWNDMgr->getElapsedSeconds();
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		spriteBkgd.render();
 
-		rocketSprite.update(elapsedTime);
-
-		vector<cAsteroid*>::iterator asteroidIterator = theAsteroids.begin();
-		while (asteroidIterator != theAsteroids.end())
+		//Used to switch between game states
+		switch (theGameState)
 		{
-			if ((*asteroidIterator)->isActive() == false)
+			//First gamestate - Start menu
+		case MENU:
+
+			//Renders the start menu background
+			spriteMenuBkgd.render();
+
+			//Renders the menu buttons
+			//.setSpritePos(glm::vec2(400.0f, 400.0f));
+			//.setSpritePos(glm::vec2(400.0f, 475.0f));
+			//.render();
+			//.render();
+
+			//Updates gamestate when play button pressed
+			//theGameState = playButton.update(theGameState, PLAYING);
+			//exitButton.update();
+
+			//Text output for start menu
+			outputMsg = strMsg[0];
+			theFontMgr->getFont("Font1")->printText(outputMsg.c_str(), FTPoint(100, 200, 0.0f));
+			outputMsg = strMsg[1];
+			theFontMgr->getFont("Font2")->printText(outputMsg.c_str(), FTPoint(200, 250, 0.0f));
+			outputMsg = strMsg[2];
+			theFontMgr->getFont("Font2")->printText(outputMsg.c_str(), FTPoint(190, 300, 0.0f));
+
+			//Closes window if exit button pressed
+			// (exitButton.getClicked())
+			//{
+			//	SendMessage(pgmWNDMgr->getWNDHandle(), WM_CLOSE, NULL, NULL);
+			//}
+
+			break;
+
+			//Second gamestate - Main level
+		case PLAYING:
+
+			//Renders main level background
+			spriteBkgd.render();
+
+			//Updates rocket's position
+			rocketSprite.update(elapsedTime);
+
 			{
-				asteroidIterator = theAsteroids.erase(asteroidIterator);
+				vector<cAsteroid*>::iterator asteroidIterator = theAsteroids.begin();
+				while (asteroidIterator != theAsteroids.end())
+				{
+					//Destroys asteroids if collision occurs
+					if ((*asteroidIterator)->isActive() == false)
+					{
+						asteroidIterator = theAsteroids.erase(asteroidIterator);
+					
+					}
+					//Renders asteroids new position
+					else
+					{
+						(*asteroidIterator)->update(elapsedTime);
+						(*asteroidIterator)->render();
+						++asteroidIterator;
+					}
+				}
 			}
-			else
+
+			// Ends game if all enemies are distroyed
 			{
-				(*asteroidIterator)->update(elapsedTime);
-				(*asteroidIterator)->render();
-				++asteroidIterator;
+				vector<cAsteroid*>::iterator asteroidIterator = theAsteroids.begin();
+				if (asteroidIterator == theAsteroids.end())
+				{
+					theGameState = END;
+				}
 			}
+
+			//Ends game if enemy collides with player
+			for (vector<cAsteroid*>::iterator asteroidIterator = theAsteroids.begin(); asteroidIterator != theAsteroids.end(); ++asteroidIterator)
+			{
+				if ((*asteroidIterator)->collidedWith((*asteroidIterator)->getBoundingRect(), rocketSprite.getBoundingRect()))
+				{
+					theGameState = END;
+				}
+			}
+
+			//Renders rocket
+			rocketSprite.render();
+
+			break;
+
+			//Third gamestate - End menu
+		case END:
+
+			//Renders End menu background
+			spriteMenuBkgd.render();
+
+			//playButton.setClicked(false);
+			//exitButton.setClicked(false);
+
+			//Renders the menu buttons
+			//playButton.setSpritePos(glm::vec2(400.0f, 300.0f));
+			//exitButton.setSpritePos(glm::vec2(400.0f, 375.0f));
+			//playButton.render();
+			//exitButton.render();
+
+			//Updates gamestate when play button pressed
+			//theGameState = playButton.update(theGameState, PLAYING);
+			//exitButton.update();
+
+			//Text output for end menu
+			outputMsg = strMsg[4];
+			theFontMgr->getFont("Font3")->printText(outputMsg.c_str(), FTPoint(200, 200, 0.0f));
+			outputMsg = strMsg[5];
+			theFontMgr->getFont("Font2")->printText(outputMsg.c_str(), FTPoint(200, 250, 0.0f));
+
+			//Closes window if exit button pressed
+			//if (exitButton.getClicked())
+			//{
+			//	SendMessage(pgmWNDMgr->getWNDHandle(), WM_CLOSE, NULL, NULL);
+			//}
+			break;
 		}
 
-		rocketSprite.render();
-		theFontMgr->getFont("Space")->printText("Asteriods", FTPoint(0.0f, -1.0f, 0.0f));
-
+		//Clears buffers
 		pgmWNDMgr->swapBuffers();
-		theInputMgr->clearBuffers(theInputMgr->KEYS_DOWN_BUFFER | theInputMgr->KEYS_PRESSED_BUFFER);
-    }
+		theInputMgr->clearBuffers(theInputMgr->KEYS_DOWN_BUFFER | theInputMgr->KEYS_PRESSED_BUFFER | theInputMgr->MOUSE_BUFFER);
+	}
 
 	theOGLWnd.shutdown(); //Free any resources
 	pgmWNDMgr->destroyWND(); //Destroy the program window

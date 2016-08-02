@@ -204,19 +204,28 @@ void cInputMgr::setRightMouseBtn(bool b)
    Return mouse X position
 =============================================================================
 */
-int  cInputMgr::getMouseXPos()
+
+
+glm::vec2  cInputMgr::getMouseXY()
 {
-	return mousePos.x;
+	return mousePos; //......................................................................................................
 }
+
+
+
+//int  cInputMgr::getMouseXPos()
+//{
+//	return mousePos.x;
+//}
 /*
 =============================================================================
    Return mouse Y position
 =============================================================================
 */
-int  cInputMgr::getMouseYPos()
-{
-	return mousePos.y;
-}
+//int  cInputMgr::getMouseYPos()
+//{
+//	return mousePos.y;
+//}
 /*
 =============================================================================
    Return state of left mouse button.

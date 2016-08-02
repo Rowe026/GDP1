@@ -39,6 +39,8 @@ using namespace std;
 //Define the string to appear in the top left corner of the window
 #define WINDOW_TITLE "Space Rockets - Sound & Text!"
 
-// This header file contains all the constants & enumarated types for the game
+// This header file contains all the constants & enumarated types for the game .............................................
+enum gameState { MENU, INSTRUCTIONS, CREATEMAZE, PLAYING, END };
+enum btnTypes { EXIT, INSTRUCT, LOAD, PLAY, SAVE, SETTINGS };
 
 #endif

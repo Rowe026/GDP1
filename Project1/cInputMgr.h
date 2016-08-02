@@ -15,7 +15,7 @@ private:
 
 	bool keysDownBuffer[256];     // true if specified key is down
 	bool keysPressedBuffer[256];  // true if specified key was pressed
-	glm::ivec2  mousePos;		  // mouse screen coordinates
+	glm::vec2  mousePos;		  // mouse screen coordinates ..............................................................
 	bool leftMouseBtn;            // true if left mouse button down
 	bool middleMouseBtn;          // true if middle mouse button down
 	bool rightMouseBtn;           // true if right mouse button down
@@ -43,11 +43,10 @@ public:
 	void setLeftMouseBtn(bool b);				// Save state of mouse button
 	void setMiddleMouseBtn(bool b);				// Save state of mouse button
 	void setRightMouseBtn(bool b);				// Save state of mouse button
-	int  getMouseXPos();						// Return mouse X position
-	int  getMouseYPos();						// Return mouse Y position
 	bool getLeftMouseBtn();						// Return state of left mouse button.
 	bool getMiddleMouseBtn();					// Return state of middle mouse button.
 	bool getRightMouseBtn();					// Return state of right mouse button.
+	glm::vec2 getMouseXY();						// Return mouse XY position ................................................
 
 };
 
